@@ -7,6 +7,7 @@ public class CamelSshRoute extends RouteBuilder {
     public void configure() throws Exception {
         from("direct:startSSH")
                 .log("logging ssh")
-                .to("mock:aaa");
+                //.to("mock:aaa");
+                .to("ssh:testUserName:testPassword@localhost:10000");
     }
 }
